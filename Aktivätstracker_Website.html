@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
             
         <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+        <link rel="stylesheet" href="./style.css">
         
     </head>
     
@@ -28,8 +30,16 @@
         <input type="text" id="abfrage_input" placeholder="" /><button id="enter">Enter</button>
 
         <div id="Antworten"></div>
+
+        <button id="clear">Ausgabe clearen</button>
+
+        <button id="print_list">Alle Recaps drucken</button>
+
+        <div id="list_output"></div>        
             
         <script type="py" src="./main.py" config="./pyscript.json"></script>
+
+        <button id="clear_list">Ausgabe clearen</button>
         
     </body>
 </html>

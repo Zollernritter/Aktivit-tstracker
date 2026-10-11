@@ -1,0 +1,258 @@
+```css
+/* ===== Grundeinstellungen ===== */
+
+:root {
+    --background: #0f172a;
+    --panel: #18243b;
+    --panel-light: #202f4b;
+    --border: #304363;
+    --text: #e8eefc;
+    --muted: #9eacc8;
+    --blue: #5285ff;
+    --green: #19b88a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 24px;
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #23365b 0,
+            transparent 40%
+        ),
+        linear-gradient(135deg, #0f172a, #111c32);
+}
+
+/* ===== Hauptüberschrift ===== */
+
+h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(90deg, #e8eefc, #70a5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+body > p {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+/* ===== Allgemeine Bereiche ===== */
+
+#Frage,
+#Antworten,
+#list_output {
+    padding: 24px;
+    margin: 20px 0;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    background: rgba(24, 36, 59, 0.88);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* Fragebereich */
+
+#Frage {
+    min-height: 80px;
+    border-color: #426ac0;
+    background: linear-gradient(
+        135deg,
+        #1d3152,
+        #18243b
+    );
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Antwortenbereich */
+
+#Antworten {
+    min-height: 140px;
+    border-color: #187d80;
+    background: linear-gradient(
+        135deg,
+        #12323e,
+        #182b3d
+    );
+}
+
+/* Gespeicherte Recaps */
+
+#list_output {
+    min-height: 100px;
+    background: rgba(24, 36, 59, 0.7);
+}
+
+/* ===== Eingabefeld ===== */
+
+#abfrage_input {
+    display: inline-block;
+    width: calc(100% - 145px);
+    min-height: 54px;
+
+    padding: 14px 18px;
+    margin-right: 12px;
+
+    color: var(--text);
+    background: #111c32;
+
+    border: 1px solid #426ac0;
+    border-radius: 12px;
+
+    font-size: 1rem;
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+#abfrage_input::placeholder {
+    color: #7f90b0;
+}
+
+#abfrage_input:focus {
+    border-color: #70a5ff;
+    box-shadow: 0 0 0 4px rgba(82, 133, 255, 0.15);
+}
+
+/* ===== Buttons ===== */
+
+button {
+    padding: 14px 22px;
+    min-height: 48px;
+
+    color: var(--text);
+    background: var(--panel-light);
+
+    border: 1px solid #405477;
+    border-radius: 12px;
+
+    font-size: 0.98rem;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #304565;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Start- und Druckbuttons */
+
+#start,
+#print_list {
+    background: linear-gradient(135deg, #3478f6, #6358ed);
+    border-color: #5787ff;
+}
+
+#start:hover,
+#print_list:hover {
+    background: linear-gradient(135deg, #4b8bff, #776df5);
+}
+
+/* Bestätigungsbutton */
+
+#enter {
+    min-width: 120px;
+    background: linear-gradient(135deg, #19c99a, #119c83);
+    border-color: #31d7ac;
+}
+
+#enter:hover {
+    background: linear-gradient(135deg, #2cddb0, #16b99a);
+}
+
+/* Ausgabefelder leeren */
+
+#clear,
+#clear_list {
+    background: #303d5b;
+    border-color: #526487;
+}
+
+#clear:hover,
+#clear_list:hover {
+    background: #405171;
+}
+
+/* ===== Abstände und Layout ===== */
+
+#start {
+    margin-bottom: 8px;
+}
+
+#enter {
+    vertical-align: top;
+}
+
+#clear,
+#print_list {
+    margin: 8px 8px 8px 0;
+}
+
+/* ===== Responsive Darstellung ===== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    #Frage,
+    #Antworten,
+    #list_output {
+        padding: 17px;
+        border-radius: 14px;
+    }
+
+    #abfrage_input {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    #enter {
+        width: 100%;
+    }
+
+    #clear,
+    #print_list,
+    #clear_list {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+```
