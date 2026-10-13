@@ -63,6 +63,9 @@ def abfrage_beenden(Recap_Liste,output_fragen,output_antworten,Antworten_str,Rec
     Antworten_str = Antworten_str + ' Daily Abfrage beendet '  + '\n'
     output_fragen.innerText = ''
     output_antworten.innerText = Antworten_str
+
+
+
     
 
 

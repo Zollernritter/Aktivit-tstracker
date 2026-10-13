@@ -19,7 +19,7 @@
     
     <body>
         
-        <h1>Aktivitätstracker</h1>
+        <h1>Eingabe</h1>
             
         <p>hier kannst du deine Aktivitäten tracken</p>
             
@@ -27,19 +27,21 @@
             
         <div id="Frage"></div>
 
-        <input type="text" id="abfrage_input" placeholder="" /><button id="enter">Enter</button>
+        <div id="button_container_1"></div>
+
+        <div id="button_container_2"></div>
+        <!-- 
+        <input type="text" id="abfrage_input" placeholder="" /><button id="enter">Enter</button> -->
 
         <div id="Antworten"></div>
 
         <button id="clear">Ausgabe clearen</button>
 
-        <button id="print_list">Alle Recaps drucken</button>
+        <script src="script.js" defer></script>
 
-        <div id="list_output"></div>        
-            
-        <script type="py" src="./main.py" config="./pyscript.json"></script>
-
-        <button id="clear_list">Ausgabe clearen</button>
+        <button onclick="window.location.href='auswertung.html'">
+            Zur Auswertung
+        </button>
         
     </body>
 </html>
