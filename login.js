@@ -15,7 +15,7 @@ if (error)
     output.textContent = "Die Sitzung konnte nicht geprüft werden.";
 } else if (session) 
 {
-    window.location.replace("./eingabe.html");
+    window.location.replace("./index.html");
 }
 
 
@@ -37,7 +37,7 @@ form.addEventListener("submit", async (event) => {
     }
     else
     {
-        window.location.replace("./eingabe.html");
+        window.location.replace("./index.html");
     }
 });
 
@@ -66,7 +66,7 @@ registerButton.addEventListener("click", async () => {
 
     if (data.session) 
     {
-        window.location.replace("./eingabe.html");
+        window.location.replace("./index.html");
     }
     else 
     {
