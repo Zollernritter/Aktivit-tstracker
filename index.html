@@ -9,39 +9,80 @@
             
         <title>Aktivitätstracker</title>
             
-        <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
-            
-        <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+        <!-- <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css"> -->
+        <!-- <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script> -->
 
         <link rel="stylesheet" href="./style.css">
         
     </head>
     
     <body>
+
+        <header class="kopfzeile">   
+
+            <div class="nav-buttons">
+                <button onclick="window.location.href='auswertung.html'">
+                    Zur Auswertung
+                </button>
+
+                <div class="user-info">
+                    <span class="user-label">Angemeldet als</span>
+                    <span id="user-email">Wird geladen ...</span>
+                </div>
+
+                <button id="logout-button">
+                    Logout
+                </button>
+            </div>
+        </header>
         
-        <h1>Eingabe</h1>
-            
-        <p>hier kannst du deine Aktivitäten tracken</p>
-            
-        <p>Abfrage starten: </p> <button id="start">Start</button>
-            
-        <div id="Frage"></div>
+        <main class="eingabe-seite">
 
-        <div id="button_container_1"></div>
+            <h1>Eingabe</h1>
 
-        <div id="button_container_2"></div>
-        <!-- 
-        <input type="text" id="abfrage_input" placeholder="" /><button id="enter">Enter</button> -->
+            <section class="eingabe-karte">
+                <h2>Stimmung</h2>
 
-        <div id="Antworten"></div>
+                <p>Hier kannst du deine Stimmung tracken.</p>
 
-        <button id="clear">Ausgabe clearen</button>
+                <div class="start-bereich">
+                    <p>Abfrage starten:</p>
+                    <button id="start_Stimmung">Start</button>
+                </div>
 
-        <script src="script.js" defer></script>
+                <div id="Progression_Abfrage_Stimmung"></div>
+                <div id="Frage_Stimmung"></div>
+                <div id="button_container_1_Stimmung"></div>
+                <div id="button_container_2_Stimmung"></div>
+                <div id="Antworten_Stimmung"></div>
 
-        <button onclick="window.location.href='auswertung.html'">
-            Zur Auswertung
-        </button>
+                <button id="clear_Stimmung">Ausgabe clearen</button>
+            </section>
+
+            <section class="eingabe-karte">
+                <h2>Aktivitäten</h2>
+
+                <p>Hier kannst du deine Aktivitäten tracken.</p>
+
+                <div class="start-bereich">
+                    <p>Abfrage starten:</p>
+                    <button id="start_Aktivitäten">Start</button>
+                </div>
+
+                <div id="Progression_Abfrage_Aktivitäten"></div>
+                <div id="Frage_Aktivitäten"></div>
+                <div id="button_container_1_Aktivitäten"></div>
+                <div id="button_container_2_Aktivitäten"></div>
+                <div id="Antworten_Aktivitäten"></div>
+
+                <button id="clear_Aktivitäten">Ausgabe clearen</button>
+            </section>
+
+        </main>
+
+
+        <script type="module" src="./auth.js"></script>
+        <script type="module" src="./eingabe.js"></script>
         
     </body>
 </html>

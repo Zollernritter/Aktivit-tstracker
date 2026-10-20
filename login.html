@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  
+    <head>
+        
+        <meta charset="utf-8" />
+            
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+            
+        <title>Aktivitätstracker</title>
+            
+        <link rel="stylesheet" href="./style.css">
+        
+    </head>
+    
+    <body>
+        
+        <h1>Login</h1>
+            
+        <p>Anmelden oder Registrieren</p>
+        
+        <form id="login-form">
+            <label for="email">E-Mail-Adresse</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="name@beispiel.de"
+                autocomplete="email"
+                required
+            />
+
+            <label for="password">Passwort</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Dein Passwort"
+                autocomplete="current-password"
+                required
+            />
+
+            <button type="submit">Anmelden</button>
+            <button type="button" id="register">Konto erstellen</button>
+        </form>
+
+        <div id="login_output" role="status"></div>
+
+        <!-- <button id="login" onclick="login()">Login</button> -->
+
+        <script type="module" src="./login.js"></script>
+        
+        <!-- <div class="nav-buttons">
+            <button onclick="window.location.href='eingabe.html'">
+                Zur Eingabe
+            </button>
+
+            <button onclick="window.location.href='auswertung.html'">
+                Zur Auswertung
+            </button>
+        </div> -->
+    </body>
+</html>

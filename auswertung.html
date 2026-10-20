@@ -8,34 +8,66 @@
         <meta name="viewport" content="width=device-width,initial-scale=1" />
             
         <title>Aktivitätstracker</title>
-            
-        <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
-            
-        <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
         <link rel="stylesheet" href="./style.css">
         
     </head>
     
     <body>
+
+        <header class="kopfzeile">  
+            <div class="nav-buttons">
+                <button onclick="window.location.href='index.html'">
+                    Zur Eingabe
+                </button>
+
+                <div class="user-info">
+                        <span class="user-label">Angemeldet als</span>
+                        <span id="user-email">Wird geladen ...</span>
+                </div>
+
+                <button id="logout-button">
+                        Logout
+                </button>
+            </div>
+        </header>
         
-        <h1>Auswertung</h1>
-            
-        <p>hier kannst du deine Aktivitäten Auswerten</p>
+        <main class="eingabe-seite">
 
-                <button id="print_list">Alle Recaps drucken</button>
+            <h1>Auswertung</h1>
 
-        <div id="list_output"></div>        
-            
-        <!-- <script type="py" src="./main.py" config="./pyscript.json"></script> -->
+            <p>Hier kannst du deine Gefühle und Aktivitäten auswerten.</p>
 
-        <button id="clear_list">Ausgabe clearen</button>
+            <section class="eingabe-karte">
 
-        <script src="script.js" defer></script>
-        
-        <button onclick="window.location.href='index.html'">
-            Zur Eingabe
-        </button>
+                <h2>Gefühle Drucken</h2>
+
+                <button id="print_Gefühle">Alle Gefühle drucken</button>
+
+                <div id="output_Gefühle"></div>
+
+                <button id="clear_Gefühle">Ausgabe clearen</button>
+
+            </section>
+
+            <section class="eingabe-karte">
+
+                <h2>Aktivitäten Drucken</h2>
+
+                <button id="print_Aktivitäten">Alle Aktivitäten drucken</button>
+
+                <div id="output_Aktivitäten"></div>
+
+                <button id="clear_Aktivitäten">Ausgabe clearen</button>
+
+            </section>
+
+        </main>
+
+
+
+        <script type="module" src="./auth.js"></script>
+        <script type="module" src="./auswertung.js"></script>
         
     </body>
 </html>

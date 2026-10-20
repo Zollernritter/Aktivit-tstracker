@@ -315,12 +315,726 @@ body > button[onclick*="location.href"]:hover {
         margin: 6px 0;
     }
 
-    body > button[onclick*="location.href"] {
-        top: 74px;
-        right: 14px;
+    .nav-buttons {
+    top: 74px;
+    right: 14px;
+    gap: 6px;
+    }
 
+    .nav-buttons button {
         min-height: 38px;
-        padding: 8px 12px;
-        font-size: 0.85rem;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== Navigation in der Kopfzeile ===== */
+
+.nav-buttons {
+    position: fixed;
+    top: 14px;
+    right: 24px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-buttons button {
+    min-height: 46px;
+    padding: 10px 20px;
+
+    color: var(--orange-dark);
+    background: var(--orange-light);
+
+    border: 1px solid #efd5bb;
+    border-radius: 10px;
+
+    font-size: 0.95rem;
+}
+
+.nav-buttons button:hover {
+    color: #ffffff;
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.user-controls {
+    position: fixed;
+    top: 14px;
+    right: 24px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+.user-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+#user-email {
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+
+
+/* ===== Login-Seite ===== */
+
+/* Seitenlayout nur für die Login-Seite */
+
+body:has(#login-form) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 110px 24px 40px;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+/* Überschrift */
+
+body:has(#login-form) h1 {
+    margin: 0 0 10px;
+
+    color: var(--orange-dark);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Beschreibung */
+
+body:has(#login-form) > p {
+    margin: 0 0 28px;
+
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Login-Karte */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 4px 16px rgba(75, 56, 34, 0.06);
+}
+
+/* Beschriftungen */
+
+#login-form label {
+    margin-top: 4px;
+
+    color: var(--text);
+    font-size: 0.94rem;
+    font-weight: 600;
+}
+
+/* Eingabefelder */
+
+#login-form input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    color: var(--text);
+    background: var(--background);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+/* Platzhalter */
+
+#login-form input::placeholder {
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+/* Fokus auf Eingabefeldern */
+
+#login-form input:focus {
+    background: var(--panel);
+    border-color: var(--orange);
+
+    box-shadow: 0 0 0 3px var(--orange-light);
+}
+
+/* Allgemeine Abstände der Login-Buttons */
+
+#login-form button {
+    width: 100%;
+    margin-top: 4px;
+}
+
+/* Anmelden-Button */
+
+#login-form button[type="submit"] {
+    margin-top: 12px;
+
+    color: #ffffff;
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+#login-form button[type="submit"]:hover {
+    color: #ffffff;
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+
+    box-shadow: 0 4px 12px rgba(185, 104, 37, 0.18);
+}
+
+/* Konto erstellen */
+
+#login-form #register {
+    color: var(--orange-dark);
+    background: var(--orange-light);
+    border-color: var(--border);
+}
+
+#login-form #register:hover {
+    background: #f4dfca;
+    border-color: var(--orange);
+}
+
+/* Login-Status und Fehlermeldungen */
+
+#login_output {
+    width: 100%;
+    max-width: 420px;
+    min-height: 24px;
+    margin-top: 18px;
+
+    color: var(--orange-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+/* Navigation auf der Login-Seite */
+
+body:has(#login-form) .nav-buttons {
+    position: static;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 28px;
+}
+
+/* Navigationsbuttons */
+
+body:has(#login-form) .nav-buttons button {
+    color: var(--text);
+    background: var(--panel);
+    border-color: var(--border);
+}
+
+body:has(#login-form) .nav-buttons button:hover {
+    color: var(--orange-dark);
+    background: var(--orange-light);
+    border-color: var(--orange);
+}
+
+/* Tastaturbedienung */
+
+#login-form button:focus-visible,
+body:has(#login-form) .nav-buttons button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+/* Darstellung auf Smartphones */
+
+@media (max-width: 480px) {
+    body:has(#login-form) {
+        padding: 80px 16px 30px;
+    }
+
+    body:has(#login-form) h1 {
+        font-size: 1.8rem;
+    }
+
+    #login-form {
+        padding: 22px;
+    }
+
+    body:has(#login-form) .nav-buttons {
+        flex-direction: column;
+        max-width: 420px;
+    }
+
+    body:has(#login-form) .nav-buttons button {
+        width: 100%;
+    }
+}
+
+
+/* ===== Eingabeseite: zentrierte Karten ===== */
+
+.eingabe-seite {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Hauptüberschrift */
+
+.eingabe-seite > h1 {
+    margin: 0 0 28px;
+    text-align: center;
+    color: var(--orange-dark);
+}
+
+/* Einzelne Karten für Stimmung und Aktivitäten */
+
+.eingabe-karte {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding: 30px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 24px rgba(75, 56, 34, 0.06);
+}
+
+/* Überschriften innerhalb der Karten */
+
+.eingabe-karte h2 {
+    margin: 0 0 10px;
+    color: var(--orange-dark);
+    font-size: 1.5rem;
+}
+
+/* Beschreibungstexte */
+
+.eingabe-karte > p {
+    margin: 0 0 22px;
+    color: var(--muted);
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Start-Bereich */
+
+.eingabe-karte .start-bereich {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 20px;
+    padding: 16px;
+
+    background: var(--panel-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.eingabe-karte .start-bereich p {
+    margin: 0;
+    color: var(--text);
+}
+
+/* Start-Buttons */
+
+#start_Stimmung,
+#start_Aktivitäten {
+    color: #ffffff;
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+#start_Stimmung:hover,
+#start_Aktivitäten:hover {
+    color: #ffffff;
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+}
+
+/* Fortschrittsanzeige */
+
+#Progression_Abfrage_Stimmung,
+#Progression_Abfrage_Aktivitäten {
+    margin-bottom: 12px;
+    color: var(--muted);
+}
+
+/* Fragen und Antwortbereiche */
+
+#Frage_Stimmung,
+#Frage_Aktivitäten,
+#Antworten_Stimmung,
+#Antworten_Aktivitäten {
+    width: 100%;
+    margin: 12px 0;
+    padding: 18px;
+
+    color: var(--text);
+    background: #fffaf4;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* Antwortbereich etwas heller */
+
+#Antworten_Stimmung,
+#Antworten_Aktivitäten {
+    background: var(--panel);
+}
+
+/* Dynamisch erzeugte Buttons */
+
+#button_container_1_Stimmung,
+#button_container_2_Stimmung,
+#button_container_1_Aktivitäten,
+#button_container_2_Aktivitäten {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin: 12px 0;
+}
+
+/* Ausgaben leeren */
+
+#clear_Stimmung,
+#clear_Aktivitäten {
+    margin-top: 12px;
+
+    color: var(--text);
+    background: var(--panel-light);
+    border-color: var(--border);
+}
+
+#clear_Stimmung:hover,
+#clear_Aktivitäten:hover {
+    background: var(--orange-light);
+    border-color: var(--orange);
+}
+
+/* Mobile Darstellung */
+
+@media (max-width: 600px) {
+    .eingabe-seite > h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .eingabe-karte {
+        padding: 18px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+
+    .eingabe-karte .start-bereich {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .eingabe-karte .start-bereich button {
+        width: 100%;
+    }
+
+    #button_container_1_Stimmung,
+    #button_container_2_Stimmung,
+    #button_container_1_Aktivitäten,
+    #button_container_2_Aktivitäten {
+        gap: 8px;
+    }
+}
+
+/* ===== Zentrierte Auswertungskarte ===== */
+
+body:has(#list_output) .eingabe-seite {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 24px rgba(75, 56, 34, 0.06);
+}
+
+/* Überschrift und Beschreibung */
+
+body:has(#list_output) .eingabe-seite h1 {
+    margin-top: 0;
+}
+
+body:has(#list_output) .eingabe-seite > p {
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Druckbutton */
+
+body:has(#list_output) #print_list {
+    margin: 8px 0;
+}
+
+/* Ausgabebereich */
+
+body:has(#list_output) #list_output {
+    width: 100%;
+    margin: 16px 0;
+}
+
+/* Button zum Leeren */
+
+body:has(#list_output) #clear_list {
+    margin-top: 8px;
+}
+
+/* Smartphone */
+
+@media (max-width: 600px) {
+    body:has(#list_output) .eingabe-seite {
+        padding: 18px;
+        border-radius: 12px;
+    }
+}
+
+
+/* ===== Stimmungs-Tabelle ===== */
+#list_output table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 0.95rem;
+}
+
+#list_output th,
+#list_output td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+#list_output th {
+    background: var(--orange-light);
+    color: var(--orange-dark);
+    font-weight: 700;
+}
+
+#list_output tr:last-child td {
+    border-bottom: none;
+}
+
+#list_output tbody tr:hover {
+    background: var(--panel-light);
+}
+
+/* Auf kleinen Bildschirmen horizontal scrollbar */
+#list_output {
+    overflow-x: auto;
+}
+
+#list_output table {
+    min-width: 600px;
+}
+
+
+/* ===== Fixierte Kopfzeile ===== */
+
+body {
+    padding-top: 110px;
+}
+
+/* Titel-Leiste bleibt beim Scrollen oben */
+body::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    height: 76px;
+    background: var(--panel);
+}
+
+/* Navigation bleibt auf derselben Höhe wie der Titel */
+.nav-buttons {
+    position: fixed;
+    top: 14px;
+    right: 24px;
+    z-index: 101;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Auf Smartphones mehr Platz für die Kopfzeile */
+@media (max-width: 600px) {
+    body {
+        padding-top: 120px;
+    }
+
+    body::before {
+        height: 66px;
+        padding: 0 14px;
+        font-size: 1.2rem;
+    }
+
+    .nav-buttons {
+        top: 72px;
+        right: 10px;
+        left: 10px;
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    .nav-buttons button {
+        min-height: 36px;
+        padding: 7px 9px;
+        font-size: 0.78rem;
+    }
+
+    .user-info {
+        max-width: 120px;
+    }
+
+    #user-email {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
+
+/* ===== Auswertungsseite ===== */
+
+.eingabe-seite:has(#output_Gefühle),
+.eingabe-seite:has(#output_Aktivitäten) {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 24px rgba(75, 56, 34, 0.06);
+}
+
+#output_Gefühle,
+#output_Aktivitäten {
+    width: 100%;
+    margin: 18px 0;
+    padding: 0;
+
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+}
+
+#output_Gefühle table,
+#output_Aktivitäten table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    background: var(--panel);
+    font-size: 0.92rem;
+}
+
+#output_Gefühle th,
+#output_Gefühle td,
+#output_Aktivitäten th,
+#output_Aktivitäten td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+#output_Gefühle th,
+#output_Aktivitäten th {
+    background: var(--orange-light);
+    color: var(--orange-dark);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+#output_Gefühle tbody tr:hover,
+#output_Aktivitäten tbody tr:hover {
+    background: var(--panel-light);
+}
+
+#output_Gefühle button,
+#output_Aktivitäten button {
+    margin: 8px;
+}
+
+#clear_Gefühle,
+#clear_Aktivitäten,
+#print_Gefühle,
+#print_Aktivitäten {
+    margin: 8px 8px 8px 0;
+}
+
+@media (max-width: 600px) {
+    .eingabe-seite:has(#output_Gefühle),
+    .eingabe-seite:has(#output_Aktivitäten) {
+        padding: 16px;
+    }
+
+    #output_Gefühle table,
+    #output_Aktivitäten table {
+        min-width: 650px;
     }
 }
