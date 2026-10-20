@@ -27,7 +27,7 @@ form.addEventListener("submit", async (event) => {
     const email = emailInput.value.trim();
     const password = passwordInput.value;
 
-    const { error } = await supabase.auth.signInWithPassword({email,password});
+    const { data, error } = await supabase.auth.signInWithPassword({email,password});
 
     if (error)  
     {
@@ -35,7 +35,7 @@ form.addEventListener("submit", async (event) => {
         console.error("Registrierungsfehler:", error.message);
         return;
     }
-    else
+    if (data.session)
     {
         window.location.replace("./index.html");
     }
